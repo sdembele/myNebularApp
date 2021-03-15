@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/app/theme/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -124,5 +126,14 @@
       }
     }
   },
-  "defaultProject": "myNebularApp"
+  "defaultProject": "myNebularApp",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "ngx",
+      "style": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "ngx"
+    }
+  }
 }
