@@ -6,10 +6,10 @@ import { MENU_ITEMS } from './pages-menu';
   selector: 'ngx-pages',
   styleUrls: ['employee.component.scss'],
   template: `
-    <ngx-custom-layout>
+    <ngx-one-column-layout>
       <nb-menu [items]="menu"></nb-menu>
       <router-outlet></router-outlet>
-    </ngx-custom-layout>
+    </ngx-one-column-layout>
   `,
 })
 export class EmployeeComponent {

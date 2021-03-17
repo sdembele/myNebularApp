@@ -7,20 +7,22 @@ $nb-themes: nb-register-theme((
   // add your variables here like:
 
   color-primary-100: #931515, // <- new primary color
-  color-primary-200: #931515,
-  color-primary-300: #931515,
-  color-primary-400: #931515,
-  color-primary-500: #931515,
-  color-primary-600: #931515,
-  color-primary-700: #931515,
-  color-primary-800: #931515,
-  color-primary-900: #931515,
+  color-primary-200: #F9DDCE,
+  color-primary-300: #F4B6A0,
+  color-primary-400: #DE7F6C,
+  color-primary-500: #BE4E43,
+  color-primary-600: #7E0F18,
+  color-primary-700: #690A1B,
+  color-primary-800: #55061B,
+  color-primary-900: #46041B,
 
   text-basic-color: color-basic-800,
   text-disabled-color: color-basic-600,
 
-  
-  background-basic-color-3 : #a89c9c,
+  menu-background-color : color-primary-100,
+
+  menu-text-color: white,
+  menu-item-icon-color: white,
 
   // color-primary-100: #931515,
   // color-primary-200: #d9e4ff,

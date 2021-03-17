@@ -18,9 +18,10 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { RouterModule } from '@angular/router';
 import { NbSecurityModule , NbRoleProvider} from '@nebular/security';
 import { ThemeModule } from './theme/theme.module';
-import { NbAuthModule } from '@nebular/auth';
+import { NbAuthModule, NbAuthStrategyOptions, NbDummyAuthStrategy, NbPasswordAuthStrategy } from '@nebular/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { of as observableOf } from 'rxjs';
+import { NbPasswordAuthStrategyOptions } from './employee/auth';
 
 
 @NgModule({
@@ -39,11 +40,17 @@ import { of as observableOf } from 'rxjs';
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
-    NbAuthModule.forRoot(),
-    NbThemeModule.forRoot({ name: 'default' }),
-    NbChatModule.forRoot({
-      messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
+    NbAuthModule.forRoot({
+
+      strategies: [
+        NbDummyAuthStrategy.setup({
+          name: 'email',
+          delay: 3000,
+        }),
+      ],
+      forms: {},
     }),
+    NbThemeModule.forRoot({ name: 'default' }),
     ThemeModule.forRoot(),
   ],
   providers: [{
@@ -54,7 +61,8 @@ import { of as observableOf } from 'rxjs';
         return observableOf(['guest', 'user', 'editor']);
       },
     },
-  },],
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

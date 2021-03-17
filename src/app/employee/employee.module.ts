@@ -16,9 +16,10 @@ import {
   NbSelectModule,
   NbSidebarModule,
   NbSidebarService,
+  NbStepperModule,
   NbUserModule,
 } from '@nebular/theme';
-import { FormsModule as ngFormsModule } from '@angular/forms';
+import { FormsModule, FormsModule as ngFormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
 import { ButtonsComponent } from './buttons/buttons.component';
@@ -27,6 +28,8 @@ import { EmployeeComponent } from './employee.component';
 import { NbRoleProvider, NbSecurityModule } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 import { IndustriousComponent } from './industrious/industrious.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
   getRole() {
@@ -41,15 +44,19 @@ export class NbSimpleRoleProvider extends NbRoleProvider {
     FormLayoutsComponent, 
     ButtonsComponent,
     EmployeeComponent,
-    IndustriousComponent],
+    IndustriousComponent,
+    DatepickerComponent,
+    StepperComponent],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     CommonModule,
     
     NbMenuModule,
     ThemeModule,
     NbSecurityModule,
-
+    NbStepperModule,
     EmployeeRoutingModule,
 
     NbLayoutModule,

@@ -8,6 +8,26 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Employee list',
+    icon: 'shopping-cart-outline',
+    link: '/employee/list',
+  },
+  {
+    title: 'Employee',
+    icon: 'home-outline',
+    children: [
+      {
+        title: 'Datepicker',
+        link: '/employee/datepicker'
+      },
+    ]
+  },
+  {
+    title: 'Employee Buttons',
+    icon: 'shopping-cart-outline',
+    link: '/employee/buttons',
+  },
+  {
     title: 'IoT Dashboard',
     icon: 'home-outline',
     link: '/pages/iot-dashboard',
@@ -22,7 +42,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Stepper',
-        link: '/pages/layout/stepper',
+        link: '/employee/stepper',
       },
       {
         title: 'List',
